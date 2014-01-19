@@ -1,0 +1,58 @@
+<html>
+<head>
+<style type="text/css">
+h3 {
+	margin-top: 50px;
+}
+#bookmarklet {
+	text-align: center;
+	text-decoration: none;
+	margin: 10px;
+	padding: 7px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 2px 2px 9px grey;
+	-webkit-box-shadow: 2px 2px 9px grey;
+	box-shadow: 2px 2px 9px grey;
+	border: 2px outset grey;
+	white-space: nowrap;
+	cursor: move;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	font-family: serif;
+	font-size: large;
+	color: black;
+	background: -moz-linear-gradient(top, #F0F0F0, #C0C0C0) repeat scroll 0
+		0 transparent;
+}
+</style>
+</head>
+<body>
+	<h2>Kicker.de stats sorter bookmarklet</h2>
+	<p>
+		This is a simple bookmarklet to sort kicker.de player rankings by score/price-ratio. It is very helpful to find good candidates in the <a
+			href="http://www.kicker.de/games/startseite/gamesstartseite.html">kicker.de management game</a>.
+	</p>
+
+	<h3>Installation</h3>
+	<p>
+		To use it, simply drag this button to your bookmarkt panel: <a id="bookmarklet"
+			href="javascript:(function(){script=document.createElement('script');script.setAttribute('type','text/javascript');script.setAttribute('charset','UTF-8');script.setAttribute('src','https://raw.github.com/hkorte/kicker-stats-sorter/master/kicker-stats-loader.js');document.documentElement.appendChild(script);})();">Sort
+			Kicker Stats</a>
+	</p>
+
+	<h3>Usage</h3>
+	<p>
+		Go to <a href="http://manager.kicker.de/interactive/bundesliga/spielerliste/">http://manager.kicker.de/interactive/bundesliga/spielerliste/</a>
+		and click the bookmarklet to get an additional column called "Ratio". This is simply the ratio between score and price, i.e. the score per
+		price in millions. Currently, it is only tested on the mentioned page, but it possibly works on other ranking pages as well.
+	</p>
+
+	<p>
+		If you want to contribute to it, please fork my <a href="https://github.com/hkorte/kicker-stats-sorter/">github repo</a>.
+	</p>
+
+
+</body>
+</html>
