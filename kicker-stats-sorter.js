@@ -1,22 +1,26 @@
 function applySorter() {
+//	var colTitle = "Ratio";
+//	var colIdx = 5;
+	var colTitle = "Ratio V.";
+	var colIdx = 7;
 	var $table = $("#ovContent table.tStat");
 	if (!$table) {
 		return false;
 	}
 	var arrowImg = $("tr:first-child th img", $table);
 	arrowImg.remove();
-	var newHeader = $("<th/>").css("white-space", "nowrap").attr("title", "The score per price in millions").text("Ratio").append(arrowImg);
-	$("tr:first-child th:eq(5)", $table).after(newHeader);
+	var newHeader = $("<th/>").css("white-space", "nowrap").attr("title", "The score per price in millions").text(colTitle).append(arrowImg);
+	$("tr:first-child th:eq(" + colIdx + ")", $table).after(newHeader);
 
 	$.each($("tr:not(:first-child):not(.tr_sep)", $table), function(index, $tr) {
 		var price = parseFloat($("td:eq(4)", $tr).text().replace(/\,/g, '.'));
-		var points = parseInt($("td:eq(5)", $tr).text());
-		$("td:eq(5)", $tr).after($("<td/>").addClass("alignright").attr("title", points / price).text((points / price).toFixed(2)));
+		var points = parseInt($("td:eq(" + colIdx + ")", $tr).text());
+		$("td:eq(" + colIdx + ")", $tr).after($("<td/>").addClass("alignright").attr("title", points / price).text((points / price).toFixed(2)));
 	});
 
 	var comparer = function(a, b) {
-		var valA = parseFloat($(a).children('td').eq(6).attr("title"));
-		var valB = parseFloat($(b).children('td').eq(6).attr("title"));
+		var valA = parseFloat($(a).children('td').eq(colIdx + 1).attr("title"));
+		var valB = parseFloat($(b).children('td').eq(colIdx + 1).attr("title"));
 		if (isNaN(valA)) {
 			if (isNaN(valB)) {
 				return 0;
