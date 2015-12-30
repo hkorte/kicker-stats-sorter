@@ -1,8 +1,8 @@
 function applySorter() {
-//	var colTitle = "Ratio";
-//	var colIdx = 5;
-	var colTitle = "Ratio V.";
-	var colIdx = 7;
+	var colTitle = "Ratio";
+	var colIdx = 5;
+//	var colTitle = "Ratio V.";
+//	var colIdx = 7;
 	var $table = $("#ovContent table.tStat");
 	if (!$table) {
 		return false;
